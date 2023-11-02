@@ -27,10 +27,7 @@ int main() {
     bool isNew = false;
     string filename = "";
     while(!success)
-    {
-        //On certain IDEs (XCode) the file path is needed in order to actually access the files. This will be need to be edited in order for the program to function on any program other than mine.
-        string file_dir = "/Users/baotu/Downloads/2023SpCS/FishTankManagementGame/FishTankManagementGame/";
-        
+    {        
         cout << "Would you like to load a pre-existing save file, or start a new game?" << endl;
         cout << "1) Load Game" << endl;
         cout << "2) New Game" << endl;
@@ -44,7 +41,7 @@ int main() {
             //get the file name for the new save file
             cout << "Please enter a file name for your new save (the .txt will be added automatically):" << endl;
             getline(cin, filename);
-            filename = file_dir + filename + ".txt";
+            filename = filename + ".txt";
             success = true;
         }
         else
@@ -52,7 +49,7 @@ int main() {
             //get the file name of the save file to load
             cout << "Please enter the file name for save (the .txt will be added automatically):" << endl;
             getline(cin, filename);
-            filename = file_dir + filename + ".txt";
+            filename = filename + ".txt";
             
             //check if it is actually loadable. Otherwise, the file does not exist.
             ifstream file;
